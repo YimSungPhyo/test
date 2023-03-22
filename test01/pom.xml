@@ -49,6 +49,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- 외부jar 선언 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <scope>system</scope>
+		    <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/commons-lang3.jar</systemPath>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -57,6 +66,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+				    <includeSystemScope>true</includeSystemScope> <!-- 외부jar추가시인식하라고선언 -->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
